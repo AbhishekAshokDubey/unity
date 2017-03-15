@@ -6,6 +6,8 @@ using System.Net;
 using System.IO;
 using System;
 
+// the class below was built from: https://www.packtpub.com/books/content/using-rest-api-unity-part-1-what-rest-and-basic-queries
+
 public class rest_calls : MonoBehaviour{
 	
 	private string results;
