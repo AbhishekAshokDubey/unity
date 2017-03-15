@@ -14,14 +14,12 @@ public class rest_data
 }
 
 public class rot_wheel : MonoBehaviour {
+	public GameObject rest_call_obj;
+	private rest_calls r;
+	
+	// varibales below can be ignored
 	public GameObject wheel;
 	public GameObject wheel_rim;
-	public GameObject rest_call_obj;
-
-	private bool secondclick = false;
-	private bool thirdclick = false;
-	private rest_calls r;
-
 	private Color currentColor;
 	private Material materialColored;
 
@@ -47,24 +45,12 @@ public class rot_wheel : MonoBehaviour {
 
 	public void motor_update(){
 		WWW w = r.GET("https://httpbin.org/get", func );
-
 		print ("clicked");
-		if (secondclick && !thirdclick) {
-			wheel.GetComponent<Animator> ().speed = 0.3f;
-			materialColored = new Material (Shader.Find ("Diffuse"));
-			materialColored.color = Color.green;
-			wheel_rim.GetComponent<Renderer> ().material = materialColored;
-			wheel.GetComponent<Animator> ().StopPlayback ();
-			thirdclick = true;
-			secondclick = true;
-		} else if (thirdclick && secondclick) {
-			wheel.GetComponent<Animator> ().speed = 1.0f;
-			materialColored = new Material (Shader.Find ("Diffuse"));
-			materialColored.color = Color.red;
-			wheel_rim.GetComponent<Renderer> ().material = materialColored;
-			wheel.GetComponent<Animator> ().StopPlayback ();
-		} else if (!secondclick && !thirdclick) {
-			secondclick = true;
-		}
+		// random code below, can be ignored
+		wheel.GetComponent<Animator> ().speed = 0.3f;
+		materialColored = new Material (Shader.Find ("Diffuse"));
+		materialColored.color = Color.green;
+		wheel_rim.GetComponent<Renderer> ().material = materialColored;
+		wheel.GetComponent<Animator> ().StopPlayback ();
 	}
 }
