@@ -1,0 +1,7 @@
+sceneSetups:
+- path: Assets/motor_scene.unity
+  isLoaded: 1
+  isActive: 1
+- path: Assets/Scifi Environment/SCIFI Enviro.unity
+  isLoaded: 1
+  isActive: 0
